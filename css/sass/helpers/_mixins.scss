@@ -1,0 +1,42 @@
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+// @include transition(all 0.3s ease-in-out);
+
+@mixin gred {
+    background-image: -webkit-gradient(linear, left top, right top, from(#01be76), color-stop(#05a3a8), color-stop(#0987da), color-stop(#0987da), color-stop(#05a3a8), to(#01be76));
+    background-image: -o-linear-gradient(left, #01be76, #05a3a8, #0987da, #0987da, #05a3a8, #01be76);
+    background-image: linear-gradient(to right, #01be76, #05a3a8, #0987da, #0987da, #05a3a8, #01be76);
+    background-size: 200%;
+}
+
+// @include gred();
+
+
+@mixin lg {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media (max-width: 767px) {
+        @content;
+    }
+}

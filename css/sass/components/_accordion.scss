@@ -1,0 +1,60 @@
+.col-foot-cont {
+    @include sm {
+        margin-bottom: 5px;
+        padding: 10px 15px;
+    }
+}
+
+.mo-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+    padding: 0 15px;
+    padding-left: 0;
+
+    #{$ltr} & {
+        padding-right: 0;
+        padding-left: 15px;
+    }
+}
+
+.mo-accordion {
+
+    &.foot-header {
+        cursor: pointer;
+        width: 100%;
+        transition: 0.4s;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:after {
+            margin: 0;
+            background-color: transparent;
+            content: "\f067";
+            font-weight: 900;
+            font-family: "Font Awesome 5 Free";
+            font-size: 14px;
+            width: 14px;
+            height: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: none;
+        }
+    }
+
+    &.active {
+
+        &:after {
+            content: "\f068";
+        }
+    }
+
+
+}

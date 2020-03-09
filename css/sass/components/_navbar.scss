@@ -1,0 +1,111 @@
+.mo-navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-li {
+    margin-left: 20px;
+
+    #{$ltr} & {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+
+.nav-anchor {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: $head;
+    @include transition(all 0.3s ease-in-out);
+    line-height: 2.5;
+
+    &:hover {
+        color: $hover;
+
+        &:after {
+            color: $hover;
+        }
+    }
+}
+
+
+.drop-down {
+    position: relative;
+
+    .nav-anchor {
+        &:after {
+            content: "\e874";
+            font-family: 'Linearicons-Free';
+            font-size: 8px;
+            margin-right: 5px;
+            color: $head;
+            @include transition(all 0.3s ease-in-out);
+
+            #{$ltr} & {
+                margin-left: 8px;
+                margin-right: 0;
+            }
+        }
+    }
+
+    &:hover {
+        .nav-anchor {
+            color: $hover;
+
+            &:after {
+                color: $hover;
+            }
+        }
+
+        .drop-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.drop-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 14px 10px 0;
+    @include gred();
+    z-index: 99;
+    border-radius: 5px;
+    @include transition(all 0.3s ease-in-out);
+    visibility: hidden;
+    opacity: 0;
+
+    &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        display: block;
+        border-width: 6px;
+        border-color: transparent transparent #05a1ab;
+        border-style: solid;
+        top: -10px;
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .droplink {
+        font-size: 16px;
+        color: #fff;
+        white-space: nowrap;
+        text-transform: capitalize;
+    }
+
+    .drop-li {
+        text-align: center;
+        padding: 0 10px 7px;
+        border-bottom: 1px solid rgba(#fff, 0.2);
+        margin-bottom: 7px;
+
+        &:last-of-type {
+            border: none;
+        }
+    }
+}

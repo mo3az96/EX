@@ -1,0 +1,136 @@
+.mo-menu-icon {
+    display: none;
+
+    @include sm {
+        display: block;
+        font-size: 25px;
+        color: $head;
+    }
+}
+
+.nd-sec {
+    .close-btn {
+        display: none;
+    }
+
+    @include sm {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(#2c2c2c, 0.9);
+        z-index: 999;
+        display: none;
+
+        .close-btn {
+            display: block;
+            font-size: 25px;
+            color: rgba($head, 0.4);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .top-nav {
+            background-color: #fff;
+            width: 280px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            @include transition(all 0.5s ease-in-out);
+            transform-origin: right;
+            transform: scaleX(0);
+
+            #{$ltr} & {
+                transform-origin: left;
+                right: auto;
+                left: 0;
+            }
+
+            &.nav-in {
+                transform: scaleX(1);
+            }
+        }
+
+        .mo-navbar {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 80px 25px 0;
+            width: 100%;
+        }
+
+        .nav-li {
+            margin-left: 0;
+            margin: 7px 0;
+
+            &.drop-down {
+                width: 100%;
+
+                &.drop-open {
+                    .nav-anchor {
+                        &:after {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-anchor {
+            line-height: unset;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lang {
+            position: absolute;
+            top: 27px;
+            right: 25px;
+            margin: 0;
+
+            .text {
+                display: none;
+            }
+        }
+
+        .drop-mob {
+            overflow: hidden;
+            display: none;
+        }
+
+        .drop-menu {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            left: auto;
+            right: auto;
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+            background: none;
+            padding: 0 10px;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .drop-li {
+            padding: 0;
+            margin: 5px 0;
+            border: none;
+            text-align: unset;
+        }
+
+        .droplink {
+            color: $text;
+        }
+    }
+}

@@ -1,0 +1,261 @@
+.main-slider {
+    .item {
+        position: relative;
+    }
+
+    .text-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(#2c2c2c, 0.6);
+        z-index: 2;
+    }
+
+    .item-pat {
+        position: absolute;
+        top: -60px;
+        right: 60px;
+        z-index: 1;
+    }
+
+    .text-cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .slider-head {
+        color: #fff;
+        font-size: 36px;
+        text-align: center;
+        padding: 1px 0;
+        width: 0%;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: all 2.5s linear;
+        text-transform: capitalize;
+
+        &.openStyle {
+            width: 100%;
+
+        }
+
+        @include xs {
+            font-size: 20px;
+
+            #{$ltr} & {
+                font-size: 16px;
+            }
+        }
+
+        &:first-child {
+            font-family: bold;
+            font-size: 48px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+
+            @include xs {
+                font-size: 30px;
+
+                #{$ltr} & {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .order {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 196px;
+        margin: 28px auto 0;
+        border-radius: 45px;
+        color: #fff;
+        font-size: 18px;
+        font-family: med;
+        @include gred();
+        @include transition(all 0.5s ease-in-out);
+        visibility: hidden;
+
+        &:hover {
+            background-position-x: 100%;
+        }
+
+        @include xs {
+            font-size: 12px;
+            width: 120px;
+            height: 30px;
+            margin-top: 15px;
+        }
+    }
+
+    .owl-dots {
+        position: absolute;
+        bottom: 37px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include xs {
+            bottom: 5px;
+        }
+
+        .owl-dot {
+            background: #fff;
+            outline: none;
+            border: none;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 4.5px;
+            @include transition(all 0.3s ease-in-out);
+
+            &.active {
+                background: $dark;
+                pointer-events: none;
+            }
+
+            &:hover {
+                background: $dark;
+            }
+        }
+    }
+}
+
+
+.clients-slider {
+    position: relative;
+
+    .owl-nav {
+        width: 0;
+        height: 0;
+
+        button[class^=owl-] {
+            position: absolute;
+            top: 50%;
+            outline: none;
+            border: none;
+            transform: translateY(-50%);
+            background: transparent;
+            color: #b2b2b2;
+            font-size: 24px;
+            @include transition(all 0.3s ease-in-out);
+
+            &.owl-next {
+                left: -65px;
+            }
+
+            &.owl-prev {
+                right: -65px;
+            }
+
+            &:hover {
+                color: $head;
+                background: transparent;
+            }
+        }
+    }
+
+    .owl-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .owl-dot {
+            background: $light;
+            outline: none;
+            border: none;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 4.5px;
+            @include transition(all 0.3s ease-in-out);
+
+            &.active {
+                background: $dark;
+                pointer-events: none;
+            }
+
+            &:hover {
+                background: $dark;
+            }
+        }
+    }
+}
+
+.client {
+    width: 166px;
+    height: 166px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // background-color: rgba($color: #000000, $alpha: 0.5);
+    @include xs {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+    }
+
+    img {
+        max-width: 100%;
+        width: auto !important;
+        opacity: 0.6;
+        filter: grayscale(100%);
+        @include transition(all 0.3s ease-in-out);
+
+        &:hover {
+            filter: none;
+            opacity: 1;
+        }
+    }
+}
+
+.news-cont {
+    padding-top: 70px;
+
+    @include xs {
+        padding-top: 26px;
+    }
+}
+
+.news-slider {
+    margin-top: 3px;
+
+    .owl-dots {
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .owl-dot {
+            background: $light;
+            outline: none;
+            border: none;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 4.5px;
+            @include transition(all 0.3s ease-in-out);
+
+            &.active {
+                background: $dark;
+                pointer-events: none;
+            }
+
+            &:hover {
+                background: $dark;
+            }
+        }
+    }
+}

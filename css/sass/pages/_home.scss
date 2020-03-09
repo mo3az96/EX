@@ -1,0 +1,287 @@
+.sec-header {
+    text-align: center;
+    font-size: 30px;
+    color: $head;
+    font-family: bold;
+    line-height: 1.6;
+    margin-top: 24px;
+    padding: 0 180px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 22px;
+
+    @include xs {
+        margin-bottom: 15px;
+        padding: 0;
+        font-size: 25px;
+    }
+}
+
+.about-sec-cont {
+    margin-top: 105px;
+
+    @include xs {
+        margin-top: 50px;
+    }
+
+    .about {
+        text-align: center;
+    }
+
+    .about-header {
+        color: $head;
+        font-size: 36px;
+        font-family: bold;
+        margin-bottom: 22px;
+
+        @include xs {
+            font-size: 30px;
+            margin-bottom: 17px;
+        }
+    }
+
+    .about-text {
+        font-size: 18px;
+        color: $text;
+        line-height: 1.778;
+        padding: 0 150px;
+
+        @include xs {
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    .services {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 46px;
+
+        @include xs {
+            flex-direction: column;
+        }
+    }
+
+    .service {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 calc(105px / 2);
+
+        @include xs {
+            margin: 20px auto;
+        }
+    }
+
+    .service-img {
+        width: 153px;
+        height: 153px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 50%;
+        @include gred();
+        margin-bottom: 32px;
+        @include transition(all 0.5s ease-in-out);
+
+        img {
+            max-width: 82px;
+            max-height: 67px;
+        }
+
+        &:hover {
+            background-position-x: 100%;
+        }
+
+        @include xs {
+            margin-bottom: 20px;
+        }
+    }
+
+    .service-name {
+        font-size: 20px;
+        color: $head;
+        font-family: med;
+        @include transition(all 0.3s ease-in-out);
+
+        &:hover {
+            color: $hover;
+        }
+
+    }
+}
+
+
+.clients-cont {
+    background-color: #f7f7f7;
+    overflow: hidden;
+    margin-top: 100px;
+    padding-bottom: 90px;
+
+    @include xs {
+        margin-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    .clients {
+        position: relative;
+        margin-top: 90px;
+
+        @include xs {
+            margin-top: 40px;
+        }
+
+
+        .item-pat {
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            z-index: 1;
+
+            @include xs {
+                bottom: auto;
+                top: -100px;
+            }
+        }
+    }
+
+    .sec-header {
+        @include xs {
+            font-size: 19px;
+        }
+    }
+
+    .clients-small-header {
+        font-size: 18px;
+        color: $head;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        @include xs {
+            font-size: 16px;
+        }
+    }
+
+
+}
+
+
+
+.new {
+    .new-img {
+        width: 390px;
+        height: 244px;
+        max-width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include transition(all 0.5s ease-in-out);
+            backface-visibility: hidden;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .date {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-image: -moz-linear-gradient(0deg, rgb(1, 190, 118) 0%, rgb(5, 163, 168) 47%, rgb(9, 135, 218) 100%);
+        background-image: -webkit-linear-gradient(0deg, rgb(1, 190, 118) 0%, rgb(5, 163, 168) 47%, rgb(9, 135, 218) 100%);
+        background-image: -ms-linear-gradient(0deg, rgb(1, 190, 118) 0%, rgb(5, 163, 168) 47%, rgb(9, 135, 218) 100%);
+        color: #fff;
+        font-family: med;
+
+        #{$ltr} & {
+            left: 10px;
+            right: auto;
+        }
+    }
+
+    .day {
+        font-size: 24px;
+        line-height: 1.083;
+    }
+
+    .mounth {
+        font-size: 12px;
+        line-height: 1.083;
+    }
+
+    .new-name {
+        font-family: med;
+        color: $new;
+        font-size: 20px;
+        @include transition(all 0.3s ease-in-out);
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 30px;
+        display: block;
+        width: max-content;
+        @include transition(all 0.3s ease-in-out);
+
+        &:hover {
+            color: $hover;
+        }
+    }
+
+    .new-desc {
+        line-height: 1.75;
+        color: $new;
+        font-size: 16px;
+        text-align: justify;
+        margin-top: 11px;
+    }
+}
+
+
+.more-cont {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+
+    @include xs {
+        margin-top: 25px;
+    }
+
+    .more {
+        text-decoration: underline;
+        font-size: 16px;
+        color: #b0b0b0;
+        @include transition(all 0.3s ease-in-out);
+
+        &:hover {
+            color: $dark;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.map {
+    width: 100%;
+    height: 300px;
+    transform: translateY(90px);
+}
