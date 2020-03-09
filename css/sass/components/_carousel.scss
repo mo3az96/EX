@@ -48,6 +48,7 @@
 
         @include xs {
             font-size: 20px;
+            display: none;
 
             #{$ltr} & {
                 font-size: 16px;
@@ -61,11 +62,18 @@
             text-transform: uppercase;
 
             @include xs {
-                font-size: 30px;
+                font-size: 22px;
+                display: block;
 
                 #{$ltr} & {
                     font-size: 18px;
                 }
+            }
+        }
+
+        &:last-child {
+            @include xs {
+                display: none;
             }
         }
     }
@@ -90,9 +98,9 @@
         }
 
         @include xs {
-            font-size: 12px;
-            width: 120px;
-            height: 30px;
+            font-size: 16px;
+            width: 150px;
+            height: 45px;
             margin-top: 15px;
         }
     }
@@ -170,7 +178,7 @@
         justify-content: center;
 
         .owl-dot {
-            background: $light;
+            background: $head;
             outline: none;
             border: none;
             width: 8px;
@@ -238,7 +246,7 @@
         justify-content: center;
 
         .owl-dot {
-            background: $light;
+            background: $head;
             outline: none;
             border: none;
             width: 8px;
