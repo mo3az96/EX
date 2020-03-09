@@ -379,6 +379,7 @@ html[dir=ltr] .drop-down .nav-anchor:after {
   .main-slider .slider-head:first-child {
     font-size: 22px;
     display: block;
+    margin: 0;
   }
   html[dir=ltr] .main-slider .slider-head:first-child {
     font-size: 18px;
@@ -416,9 +417,10 @@ html[dir=ltr] .drop-down .nav-anchor:after {
 @media (max-width: 767px) {
   .main-slider .order {
     font-size: 16px;
-    width: 150px;
+    width: 160px;
     height: 45px;
     margin-top: 15px;
+    animation-delay: 1s !important;
   }
 }
 .main-slider .owl-dots {
